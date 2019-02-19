@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.koddev.chatapp.Model.Chat;
+import com.koddev.chatapp.Model.Upload;
 import com.koddev.chatapp.R;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.List;
@@ -25,6 +27,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     private Context mContext;
     private List<Chat> mChat;
+    private List<Upload> mUpload;
     private String imageurl;
 
     FirebaseUser fuser;
@@ -40,18 +43,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public MessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == MSG_TYPE_RIGHT) {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_right, parent, false);
-            return new MessageAdapter.ViewHolder(view);
+                return new MessageAdapter.ViewHolder(view);
+
         } else {
             View view = LayoutInflater.from(mContext).inflate(R.layout.chat_item_left, parent, false);
             return new MessageAdapter.ViewHolder(view);
         }
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull MessageAdapter.ViewHolder holder, int position) {
 
         Chat chat = mChat.get(position);
-
         holder.show_message.setText(chat.getMessage());
 
         if (imageurl.equals("default")){
@@ -69,8 +73,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         } else {
             holder.txt_seen.setVisibility(View.GONE);
         }
-
-
+        //Upload upload = mUpload.get(position);
+        //Picasso.with(mContext).load(upload.getImageUrl()).fit().centerCrop().into(holder.imageView);
     }
 
     @Override

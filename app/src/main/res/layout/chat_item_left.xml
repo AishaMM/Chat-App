@@ -29,5 +29,15 @@
         android:visibility="gone"
         android:layout_below="@id/show_message"/>
 
+    <ImageView android:id="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_marginLeft="5dp"
+        android:padding="8dp"
+        android:background="@drawable/background_left"
+        android:scaleType="centerCrop"
+        />
+
 
 </RelativeLayout>

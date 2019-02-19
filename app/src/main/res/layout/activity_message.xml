@@ -59,6 +59,18 @@
         android:layout_below="@id/bar_layout"
         android:layout_above="@id/bottom"/>
 
+
+    <ImageView android:id="@+id/imageView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/bar_layout"
+        android:layout_above="@+id/bottom"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="100dp"
+        android:scaleType="centerCrop" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:padding="5dp"
@@ -99,11 +111,6 @@
 
 
 
-        <ImageView android:id="@+id/imageView"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon"
-            android:layout_width="wrap_content"
-            android:visibility="invisible"/>
 
     </RelativeLayout>
 
